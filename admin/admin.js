@@ -82,8 +82,23 @@
   const uploader = (label, id, target, multiple) => `<div class="ad-up"><b>${label}</b><div class="ad-prev" id="${id}"></div><label class="ad-file"><i class="fa-solid fa-arrow-up-from-bracket" aria-hidden="true"></i> ${multiple ? 'Add images' : 'Choose image'}<input type="file" accept="image/png,image/jpeg,image/webp" data-up="${target}" ${multiple ? 'multiple' : ''}></label></div>`
 
   function login() {
-    return `<div class="ad-login"><div class="ad-card"><a class="ad-brand" href="../index.html">${esc(D.brand)}<span>Admin</span></a><h1>Sign in</h1><p class="ad-mut">Manage your projects and site content.</p>
-<form id="lf" style="margin-top:1.5rem">${field('Email', input('email', '', 'type="email" required autocomplete="username" inputmode="email"'))}${field('Password', input('password', '', 'type="password" required autocomplete="current-password"'))}<button class="ab pri" style="width:100%">Sign in</button><p class="ad-err" id="lerr" role="alert"></p></form></div></div>`
+    return `<div class="lg">
+<aside class="lg-side"><img class="lg-bg" src="../images/hero.webp" alt=""><div class="lg-shade"></div>
+<div class="lg-in"><a class="lg-brand" href="../index.html">${esc(D.brand)}</a>
+<div><h2 class="lg-h">Manage your portfolio, your way.</h2><p class="lg-p">Add projects, update your story and keep your site fresh in minutes.</p>
+<ul class="lg-list"><li><i class="fa-solid fa-layer-group" aria-hidden="true"></i>Add and edit your projects</li><li><i class="fa-solid fa-user" aria-hidden="true"></i>Update your about page</li><li><i class="fa-solid fa-bolt" aria-hidden="true"></i>Changes go live instantly</li></ul></div>
+<p class="lg-foot">&copy; ${new Date().getFullYear()} ${esc(D.brand)}</p></div></aside>
+<main class="lg-main"><div class="lg-card">
+<a class="lg-mbrand" href="../index.html">${esc(D.brand)}</a>
+<span class="lg-tag"><i class="fa-solid fa-lock" aria-hidden="true"></i> Admin area</span>
+<h1 class="lg-title">Welcome back</h1><p class="lg-sub">Sign in to manage your website.</p>
+<form id="lf" novalidate>
+<label class="lg-f"><span>Email</span><div class="lg-inp"><i class="fa-regular fa-envelope" aria-hidden="true"></i><input name="email" type="email" required autocomplete="username" inputmode="email" placeholder="you@example.com"></div></label>
+<label class="lg-f"><span>Password</span><div class="lg-inp"><i class="fa-solid fa-lock" aria-hidden="true"></i><input name="password" type="password" required autocomplete="current-password" placeholder="Enter your password"><button type="button" class="lg-eye" data-act="pw" aria-label="Show password"><i class="fa-regular fa-eye" aria-hidden="true"></i></button></div></label>
+<button class="lg-btn" type="submit"><span>Sign in</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+<p class="ad-err" id="lerr" role="alert"></p></form>
+<a class="lg-back" href="../index.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to website</a>
+</div></main></div>`
   }
   function shell(inner) {
     return `<header class="ad-top"><a class="ad-brand" href="../index.html">${esc(D.brand)}<span>Admin</span></a><div class="ad-acts"><a class="ab" href="../index.html" target="_blank" rel="noreferrer" aria-label="View site"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span>View site</span></a><button class="ab" data-act="logout" aria-label="Sign out"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i><span>Sign out</span></button></div></header>
@@ -163,6 +178,7 @@ ${uploader('Portrait', 'prev-portraitSrc', 'portraitSrc')}${uploader('Hero backg
   const ACT = {
     nav: (b) => { S.view = b.dataset.v; S.edit = null; paint(); scrollTo(0, 0) },
     logout: () => sb.auth.signOut(),
+    pw: (b) => { const i = b.parentElement.querySelector('input'), show = i.type === 'password'; i.type = show ? 'text' : 'password'; b.setAttribute('aria-label', show ? 'Hide password' : 'Show password'); b.innerHTML = `<i class="fa-regular ${show ? 'fa-eye-slash' : 'fa-eye'}" aria-hidden="true"></i>` },
     new: () => { S.view = 'projects'; S.edit = { slug: '', title: '', category: '', summary: '', description: '', client: '', role: '', year: '', delivery_time: '', tools: [], link: '', cover_url: '', gallery: [], published: true, fresh: true }; paint(); scrollTo(0, 0) },
     edit: (b) => { const p = S.projects.find((x) => x.id === b.dataset.id); if (p) { S.edit = { ...p, tools: [...(p.tools || [])], gallery: [...(p.gallery || [])] }; paint(); scrollTo(0, 0) } },
     cancel: () => { S.edit = null; paint() },
@@ -247,9 +263,11 @@ ${uploader('Portrait', 'prev-portraitSrc', 'portraitSrc')}${uploader('Hero backg
     if (f.id === 'af') return withBusy(f.querySelector('[type=submit]'), () => saveAbout(f))
   })
   async function doLogin(f) {
-    const b = f.querySelector('button'), er = $('#lerr'); b.disabled = true; er.textContent = ''
+    const b = f.querySelector('[type=submit]'), er = $('#lerr'), lab = b.querySelector('span')
+    if (!f.elements.email.value.trim() || !f.elements.password.value) { er.textContent = 'Enter your email and password.'; return }
+    b.disabled = true; lab.textContent = 'Signing in...'; er.textContent = ''
     const r = await sb.auth.signInWithPassword({ email: f.elements.email.value.trim(), password: f.elements.password.value })
-    if (r.error) { er.textContent = /invalid/i.test(r.error.message) ? 'Wrong email or password.' : r.error.message; b.disabled = false }
+    if (r.error) { er.textContent = /invalid/i.test(r.error.message) ? 'Wrong email or password.' : r.error.message; b.disabled = false; lab.textContent = 'Sign in' }
   }
   async function saveProject(f) {
     const v = (n) => f.elements[n].value.trim(), e = S.edit
