@@ -99,3 +99,49 @@
   .ad-bar .ab{width:100%}
   .ad-foot .ab{flex:1}
 }
+
+/* ===== Admin fonts: Poppins for headings, Inter for text (admin only) ===== */
+.ad{--f-head:'Poppins';--f-body:'Inter'}
+.ad h1,.ad h2,.ad h3{letter-spacing:-.02em}
+
+/* ===== Login: split screen ===== */
+.lg{min-height:100svh;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);background:#fff}
+.lg-side{position:relative;overflow:hidden;color:#f1f2f4;background:#0f1013}
+.lg-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.05)}
+.lg-shade{position:absolute;inset:0;background:linear-gradient(160deg,rgba(15,16,19,.82),rgba(15,16,19,.94))}
+.lg-in{position:relative;z-index:1;min-height:100%;display:flex;flex-direction:column;justify-content:space-between;gap:2rem;padding:clamp(2rem,4vw,3.5rem)}
+.lg-brand{font:600 1.35rem var(--f-head);letter-spacing:-.02em}
+.lg-h{font:600 clamp(2rem,3.4vw,3rem)/1.12 var(--f-head);letter-spacing:-.025em;max-width:16ch;margin:0 0 1rem}
+.lg-p{max-width:38ch;color:rgba(241,242,244,.72);font-size:1.02rem}
+.lg-list{list-style:none;padding:0;margin-top:2rem;display:grid;gap:.9rem}
+.lg-list li{display:flex;align-items:center;gap:.85rem;color:rgba(241,242,244,.88);font-size:.97rem}
+.lg-list i{display:grid;place-items:center;width:2.1rem;height:2.1rem;border-radius:10px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);font-size:.85rem}
+.lg-foot{color:rgba(241,242,244,.5);font-size:.85rem}
+.lg-main{display:grid;place-items:center;padding:2rem 1.25rem;background:#f7f8fa}
+.lg-card{width:min(430px,100%);padding:clamp(1.75rem,4vw,2.6rem);border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:0 30px 60px -35px rgba(20,22,26,.35),0 10px 24px -16px rgba(20,22,26,.15)}
+.lg-mbrand{display:none;margin-bottom:1.5rem;font:600 1.3rem var(--f-head);letter-spacing:-.02em}
+.lg-tag{display:inline-flex;align-items:center;gap:.5rem;padding:.3rem .8rem;border-radius:999px;background:rgba(217,45,39,.08);color:var(--ac);font:600 .78rem var(--f-body);letter-spacing:.02em}
+.lg-title{font:600 clamp(1.7rem,3vw,2.1rem)/1.15 var(--f-head);letter-spacing:-.025em;max-width:none;margin:1rem 0 .4rem}
+.lg-sub{color:var(--mut);margin-bottom:1.75rem}
+.lg-f{display:grid;gap:.45rem;margin-bottom:1.15rem;font:600 .88rem var(--f-body)}
+.lg-inp{position:relative}
+.lg-inp>i:first-child{position:absolute;left:1rem;top:50%;translate:0 -50%;color:#8a9099;font-size:.95rem;pointer-events:none;transition:color .25s}
+.lg-inp input{width:100%;height:3.1rem;padding:0 3rem 0 2.7rem;border:1px solid rgba(20,22,26,.16);border-radius:14px;background:#fff;color:var(--fg);font:400 1rem var(--f-body);transition:border-color .25s,box-shadow .25s}
+.lg-inp input::placeholder{color:#a3a9b1}
+.lg-inp input:hover{border-color:rgba(20,22,26,.3)}
+.lg-inp input:focus{outline:0;border-color:var(--ac);box-shadow:0 0 0 4px rgba(217,45,39,.12)}
+.lg-inp:focus-within>i:first-child{color:var(--ac)}
+.lg-eye{position:absolute;right:.4rem;top:50%;translate:0 -50%;width:2.4rem;height:2.4rem;border:0;border-radius:10px;background:transparent;color:#8a9099;cursor:pointer;transition:color .25s,background .25s}
+.lg-eye:hover{color:var(--fg);background:rgba(20,22,26,.06)}
+.lg-btn{width:100%;height:3.2rem;margin-top:.5rem;display:flex;align-items:center;justify-content:center;gap:.7rem;border:0;border-radius:14px;background:var(--ac);color:#fff;font:600 1rem var(--f-body);cursor:pointer;box-shadow:0 12px 24px -12px rgba(217,45,39,.7);transition:transform .3s var(--ease),box-shadow .3s,opacity .2s}
+.lg-btn:hover{transform:translateY(-1px);box-shadow:0 16px 28px -12px rgba(217,45,39,.8)}
+.lg-btn:hover i{transform:translateX(3px)}.lg-btn i{transition:transform .3s var(--ease);font-size:.85rem}
+.lg-btn:disabled{opacity:.7;cursor:progress;transform:none}
+.lg-btn:focus-visible{outline:3px solid rgba(217,45,39,.35);outline-offset:3px}
+.lg-back{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:1.5rem;color:var(--mut);font-size:.92rem;transition:color .25s}
+.lg-back:hover{color:var(--fg)}
+.lg .ad-err{min-height:1.4rem;margin-top:.85rem;text-align:center}
+@media(max-width:900px){
+  .lg{grid-template-columns:1fr}.lg-side{display:none}
+  .lg-main{padding:1.25rem;background:#f3f4f6}.lg-card{padding:1.75rem 1.4rem}.lg-mbrand{display:block}
+}
