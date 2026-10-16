@@ -1,0 +1,101 @@
+/* Admin panel. Uses the site's colour tokens from ../css/style.css so light and dark match the site. */
+.ad{min-height:100svh;background:var(--bg)}
+.ad button,.ad input,.ad select,.ad textarea{font-family:inherit}
+.ad-h{font-size:clamp(1.6rem,4vw,2.2rem);max-width:none;margin:0}
+.ad-h2{font-size:1.15rem;letter-spacing:-.01em;margin:0 0 1rem}
+.ad-mut{color:var(--mut);font-size:.95rem}
+
+/* Buttons */
+.ab{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:2.75rem;padding:.6rem 1.15rem;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--fg);font:600 .95rem var(--f-body);cursor:pointer;transition:transform .3s var(--ease),border-color .3s,background .3s}
+.ab:hover{border-color:var(--mut)}.ab:disabled{opacity:.5;cursor:not-allowed}
+.ab.pri{background:var(--ac);border-color:var(--ac);color:#fff}.ab.pri:hover{transform:translateY(-1px)}
+.ab.dan{color:#e5484d}.ab.icon{width:2.75rem;padding:0}
+.ab.sm{min-height:2.4rem;padding:.4rem .9rem;font-size:.9rem}
+
+/* Login */
+.ad-login{min-height:100svh;display:grid;place-items:center;padding:1.25rem}
+.ad-login .ad-card{width:min(420px,100%);padding:2rem}
+.ad-login h1{font-size:1.8rem;max-width:none;margin:.25rem 0 .5rem}
+.ad-err{min-height:1.4rem;margin-top:.75rem;color:#e5484d;font-size:.92rem}
+
+/* Shell */
+.ad-top{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem clamp(1rem,3vw,2rem);border-bottom:1px solid var(--line);background:var(--glass);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.ad-brand{font:600 1.05rem var(--f-head)}.ad-brand span{margin-left:.4rem;padding:.12rem .55rem;border-radius:999px;background:var(--ac);color:#fff;font:600 .72rem var(--f-body);letter-spacing:.04em;text-transform:uppercase}
+.ad-acts{display:flex;gap:.5rem;align-items:center}
+.ad-body{display:grid;grid-template-columns:220px minmax(0,1fr);max-width:1240px;margin-inline:auto}
+.ad-nav{position:sticky;top:4.2rem;align-self:start;display:grid;gap:.3rem;padding:1.5rem 1rem 1.5rem clamp(1rem,3vw,2rem)}
+.ad-nav button{display:flex;align-items:center;gap:.75rem;min-height:2.9rem;padding:.6rem .9rem;border:0;border-radius:12px;background:transparent;color:var(--mut);font:600 .95rem var(--f-body);cursor:pointer;text-align:left}
+.ad-nav button i{width:1.2rem;text-align:center}
+.ad-nav button:hover{color:var(--fg)}.ad-nav button[aria-current=page]{background:var(--glass);color:var(--fg);box-shadow:inset 0 0 0 1px var(--line)}.ad-nav button[aria-current=page] i{color:var(--ac)}
+.ad-main{min-width:0;padding:1.5rem clamp(1rem,3vw,2rem) 4rem}
+.ad-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
+
+/* Cards, stats, forms */
+.ad-card{padding:1.5rem;border:1px solid var(--line);border-radius:18px;background:var(--card);margin-bottom:1.25rem}
+.ad-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:1.25rem}
+.ad-stat{padding:1.25rem;border:1px solid var(--line);border-radius:18px;background:var(--card)}
+.ad-stat b{display:block;font:600 2.2rem/1 var(--f-head);letter-spacing:-.02em}.ad-stat span{color:var(--mut);font-size:.9rem}
+.ad-actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.af{display:grid;gap:.4rem;margin-bottom:1.1rem;font-size:.92rem;font-weight:600}
+.af small{font-weight:400;color:var(--mut)}
+.af input,.af textarea,.af select{width:100%;min-height:2.85rem;padding:.7rem .9rem;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--fg);font-size:1rem;font-weight:400}
+.af textarea{resize:vertical;line-height:1.5}
+.af input:focus,.af textarea:focus,.af select:focus{outline:2px solid var(--ac);outline-offset:1px}
+.ad-2{display:grid;grid-template-columns:1fr 1fr;gap:0 1rem}.ad-3{display:grid;grid-template-columns:repeat(3,1fr);gap:0 1rem}
+.ad-sw{display:flex;align-items:center;gap:.75rem;min-height:2.75rem;font-weight:600}
+.ad-sw input{width:1.3rem;height:1.3rem;accent-color:var(--ac)}
+.ad-foot{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.5rem}
+
+/* Image upload */
+.ad-up{display:grid;gap:.75rem;margin-bottom:1.1rem}
+.ad-up>b{font-size:.92rem}
+.ad-prev{display:flex;flex-wrap:wrap;gap:.75rem}
+.ad-prev .pv{position:relative;width:min(100%,220px);aspect-ratio:808/632;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg)}
+.ad-prev img{width:100%;height:100%;object-fit:cover;display:block}
+.ad-prev .pv button{position:absolute;top:.4rem;right:.4rem;width:2rem;height:2rem;border:0;border-radius:50%;background:rgba(0,0,0,.65);color:#fff;cursor:pointer}
+.ad-none{display:grid;place-items:center;width:min(100%,220px);aspect-ratio:808/632;border:1px dashed var(--line);border-radius:12px;color:var(--mut);font-size:.85rem}
+.ad-file{display:inline-flex;align-items:center;gap:.5rem;width:max-content;max-width:100%;min-height:2.75rem;padding:.6rem 1.15rem;border:1px dashed var(--mut);border-radius:999px;cursor:pointer;font-weight:600;font-size:.95rem}
+.ad-file:hover{border-color:var(--ac);color:var(--ac)}
+.ad-file input{position:absolute;opacity:0;width:1px;height:1px}
+.ad-file:focus-within{outline:2px solid var(--ac);outline-offset:2px}
+.ad-up.busy .ad-file{opacity:.55;pointer-events:none}.ad-up.busy .ad-file::after{content:"Uploading...";font-weight:400}
+
+/* Project list */
+.ad-list{list-style:none;padding:0;display:grid;gap:.75rem}
+.ad-item{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:1rem;padding:.8rem;border:1px solid var(--line);border-radius:16px;background:var(--card)}
+.ad-th{width:92px;aspect-ratio:808/632;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:var(--bg)}
+.ad-meta{display:grid;gap:.15rem;min-width:0}.ad-meta b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ad-meta span{color:var(--mut);font-size:.88rem}
+.badge{display:inline-block;width:max-content;padding:.1rem .6rem;border-radius:999px;background:rgba(229,160,0,.16);color:#c88a00;font:600 .75rem var(--f-body);font-style:normal}
+.ad-ctl{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.ad-empty{padding:2.5rem 1.5rem;border:1px dashed var(--line);border-radius:18px;text-align:center;display:grid;gap:1rem;justify-items:center}
+
+/* Repeaters (Content tab) */
+.ad-det{border:1px solid var(--line);border-radius:18px;background:var(--card);margin-bottom:1rem}
+.ad-det>summary{padding:1.1rem 1.25rem;font:600 1.05rem var(--f-head);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.ad-det>summary::-webkit-details-marker{display:none}.ad-det[open]>summary i{transform:rotate(180deg)}.ad-det>summary i{transition:transform .3s}
+.ad-det>div{padding:0 1.25rem 1.25rem}
+.ad-rep{padding:1rem;border:1px solid var(--line);border-radius:14px;margin-bottom:.8rem;background:var(--bg)}
+.ad-rep .af:last-of-type{margin-bottom:.6rem}
+.ad-repctl{display:flex;gap:.4rem;justify-content:flex-end}
+
+/* Toast */
+#toast{position:fixed;left:50%;bottom:1.25rem;z-index:80;translate:-50% 20px;max-width:min(92vw,460px);padding:.8rem 1.2rem;border-radius:14px;background:var(--fg);color:var(--bg);font-weight:600;font-size:.95rem;opacity:0;pointer-events:none;transition:opacity .3s,translate .4s var(--ease)}
+#toast.on{opacity:1;translate:-50% 0}#toast.bad{background:#e5484d;color:#fff}
+
+/* Phones: nav becomes a bottom tab bar, forms go single column */
+@media(max-width:860px){
+  .ad-body{display:block}
+  .ad-nav{position:fixed;inset:auto 0 0 0;z-index:40;top:auto;grid-auto-flow:column;grid-auto-columns:1fr;gap:0;padding:.35rem .5rem calc(.35rem + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:var(--bg)}
+  .ad-nav button{flex-direction:column;gap:.2rem;justify-content:center;min-height:3.3rem;padding:.35rem;font-size:.72rem;text-align:center}
+  .ad-nav button i{font-size:1.1rem}
+  .ad-main{padding-bottom:7rem}
+  #toast{bottom:5.5rem}
+}
+@media(max-width:560px){
+  .ad-acts .ab span{display:none}.ad-acts .ab{width:2.75rem;padding:0}
+  .ad-2,.ad-3{grid-template-columns:1fr}
+  .ad-item{grid-template-columns:72px minmax(0,1fr)}.ad-th{width:72px}
+  .ad-ctl{grid-column:1/-1;justify-content:flex-start}
+  .ad-bar .ab{width:100%}
+  .ad-foot .ab{flex:1}
+}

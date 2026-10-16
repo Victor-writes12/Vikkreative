@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://YOUR-SITE-URL/</loc><lastmod>2026-10-14</lastmod><priority>1.0</priority></url>
+  <url><loc>https://YOUR-SITE-URL/about.html</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://YOUR-SITE-URL/project.html?p=jovine-touch</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://YOUR-SITE-URL/project.html?p=kablux</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://YOUR-SITE-URL/project.html?p=jollof-game</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://YOUR-SITE-URL/project.html?p=hennessy-store</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://YOUR-SITE-URL/project.html?p=grandeur-structures</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://YOUR-SITE-URL/project.html?p=crypto-wallet</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://YOUR-SITE-URL/project.html?p=ios-watch</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://YOUR-SITE-URL/project.html?p=ajosepo-movie-app</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+</urlset>
