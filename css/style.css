@@ -162,3 +162,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .next:hover .go i{transform:translateX(5px)}
 @media(max-width:860px){.proj-body{grid-template-columns:1fr}.proj-side{position:static}.next{grid-template-columns:1fr}.next img{order:-1;min-height:0;aspect-ratio:808/632}}
 .notfound{padding:10rem 0 6rem;text-align:left}
+body{transition:opacity .45s ease}
+html.wait body{opacity:0;animation:reveal .01s 3.5s forwards}
+@keyframes reveal{to{opacity:1}}

@@ -194,8 +194,13 @@
   })
 
   // Start
-  const hasRemote = !!(C.supabaseUrl && C.supabaseAnonKey)
+    const hasRemote = !!(C.supabaseUrl && C.supabaseAnonKey)
+  const show = () => document.documentElement.classList.remove('wait')
+  const paint = (d) => { render(d, true); motion(); show() }
   if (!$('#p-main')) canon(location.pathname.split('/').pop() === 'about.html' ? 'about.html' : '')
-  render(D, !hasRemote); motion()
-  remote().then((res) => { if (res) { render(merge(res), true); motion() } }).catch(() => { if ($('#p-main')) renderProject(D, true) })
+  if (!hasRemote) paint(D)
+  else {
+    const t = setTimeout(() => paint(D), 3000)
+    remote().then((res) => { clearTimeout(t); paint(res ? merge(res) : D) }).catch(() => { clearTimeout(t); paint(D) })
+  }
 })()
