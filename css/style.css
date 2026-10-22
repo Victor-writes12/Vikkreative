@@ -165,3 +165,4 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 body{transition:opacity .45s ease}
 html.wait body{opacity:0;animation:reveal .01s 3.5s forwards}
 @keyframes reveal{to{opacity:1}}
+.hero .kicker{display:none}
