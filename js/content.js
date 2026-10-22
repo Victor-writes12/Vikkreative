@@ -2,7 +2,7 @@
   siteUrl: 'https://vikkreative.com',
   supabaseUrl: 'https://bmlgxcdhruticmvigbqe.supabase.co',
   supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJtbGd4Y2RocnV0aWNtdmlnYnFlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIxMDg5MzIsImV4cCI6MjEwNzY4NDkzMn0.Wo4AtyUOv3mOI3P-X-cixJ7pQfa0-Wce_ad28fSVyLg',
-  web3formsKey: ''
+  web3formsKey: '36d113cb-49a3-43cb-9feb-af15851e904e'
 };
 
 window.LOGOS = {
