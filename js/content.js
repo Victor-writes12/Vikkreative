@@ -1,8 +1,8 @@
 // 1) SETTINGS: fill these in after you create the accounts (see README.md)
 window.SITE_CONFIG = {
-  siteUrl: 'https://vikkreative.com', // the live address with no slash at the end. Used for SEO tags.
-  supabaseUrl: '',       // Supabase > Project Settings > API > Project URL. Leave empty to use only the content below.
-  supabaseAnonKey: '',   // Supabase > Project Settings > API > anon public key (safe to publish)
+  siteUrl: 'https://vikkreative.com', 
+  supabaseUrl: 'https://bmlgxcdhruticmvigbqe.supabase.co/',
+  supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJtbGd4Y2RocnV0aWNtdmlnYnFlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIxMDg5MzIsImV4cCI6MjEwNzY4NDkzMn0.Wo4AtyUOv3mOI3P-X-cixJ7pQfa0-Wce_ad28fSVyLg',   
   web3formsKey: '',      // from web3forms.com, created with supportdoc11@gmail.com
 }
 
