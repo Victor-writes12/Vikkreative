@@ -90,7 +90,6 @@
 <p class="lg-foot">&copy; ${new Date().getFullYear()} ${esc(D.brand)}</p></div></aside>
 <main class="lg-main"><div class="lg-card">
 <a class="lg-mbrand" href="../">${esc(D.brand)}</a>
-<span class="lg-tag"><i class="fa-solid fa-lock" aria-hidden="true"></i> Admin area</span>
 <h1 class="lg-title">Welcome back</h1><p class="lg-sub">Sign in to manage your website.</p>
 <form id="lf" novalidate>
 <label class="lg-f"><span>Email</span><div class="lg-inp"><i class="fa-regular fa-envelope" aria-hidden="true"></i><input name="email" type="email" required autocomplete="username" inputmode="email" placeholder="you@example.com"></div></label>
