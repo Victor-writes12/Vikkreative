@@ -1,7 +1,7 @@
 window.SITE_CONFIG = {
   siteUrl: 'https://vikkreative.com',
-  supabaseUrl: '',
-  supabaseAnonKey: '',
+  supabaseUrl: 'https://bmlgxcdhruticmvigbqe.supabase.co',
+  supabaseAnonKey: 'sb_publishable_ARrCbURYXNO1WFXaM5gIDQ_49Wwo2g5',
   web3formsKey: '',
 }
 
